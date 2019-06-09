@@ -1,22 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import TextField from "./text-field";
-
+import List from "./list";
 import "./styles.css";
 
 class App extends React.Component {
   state = {
-    text: ""
+    text: "",
+    listArr: []
   };
+  counter = 0;
   setText = event => {
     this.setState({ text: event.target.value });
   };
 
   handleKeyPress = e => {
     if (e.key === "Enter") {
-      console.log("Check Please");
+      this.setState({ listArr: [...this.state.listArr, this.state.text] });
     }
   };
+
   render() {
     return (
       <div>
@@ -25,6 +28,8 @@ class App extends React.Component {
           setText={this.setText}
           onKeyPress={this.handleKeyPress}
         />
+
+        <List listArr={this.state.listArr} />
       </div>
     );
   }
