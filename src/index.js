@@ -12,10 +12,19 @@ class App extends React.Component {
     this.setState({ text: event.target.value });
   };
 
+  handleKeyPress = e => {
+    if (e.key === "Enter") {
+      console.log("Check Please");
+    }
+  };
   render() {
     return (
       <div>
-        <TextField text={this.state.text} setText={this.setText} />
+        <TextField
+          text={this.state.text}
+          setText={this.setText}
+          onKeyPress={this.handleKeyPress}
+        />
       </div>
     );
   }
