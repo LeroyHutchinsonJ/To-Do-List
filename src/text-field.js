@@ -1,6 +1,7 @@
 import React from "react";
 
-var TextField = () => {
-  return <div>Blah</div>;
+var TextField = ({ text, setText }) => {
+  return <input type="text" value={text} onChange={setText} />;
 };
+
 export default TextField;

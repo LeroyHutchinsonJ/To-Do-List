@@ -5,10 +5,17 @@ import TextField from "./text-field";
 import "./styles.css";
 
 class App extends React.Component {
+  state = {
+    text: ""
+  };
+  setText = event => {
+    this.setState({ text: event.target.value });
+  };
+
   render() {
     return (
       <div>
-        <TextField />
+        <TextField text={this.state.text} setText={this.setText} />
       </div>
     );
   }
