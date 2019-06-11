@@ -11,6 +11,12 @@
   padding: 10px;
   border: 1px solid black;
 }
-.list:hover {
+.list:hover,
+.crossedOut:hover {
   cursor: pointer;
+}
+.crossedOut {
+  padding: 10px;
+  border: 1px solid black;
+  text-decoration: line-through;
 }
