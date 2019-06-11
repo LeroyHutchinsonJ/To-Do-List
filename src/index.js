@@ -17,6 +17,7 @@ class App extends React.Component {
   handleKeyPress = e => {
     if (e.key === "Enter") {
       this.setState({ listArr: [...this.state.listArr, this.state.text] });
+      this.setState({ text: "" });
     }
   };
 
