@@ -1,14 +1,32 @@
 import React from "react";
 import shortid from "shortid";
+
+var crossedOut = "crossedOut";
+var list = "list";
+var check = false;
+
 var List = ({ listArr }) => {
   return (
-    <ul>
+    <span className="flexContainer">
       {listArr.map(info => (
-        <li key={shortid.generate()}>
-          {info} {info.counter}
-        </li>
+        <div key={shortid.generate()}>
+          <div className={check ? list : crossedOut} onClick={CrossOutList}>
+            {" "}
+            {info}
+          </div>
+          <br />
+        </div>
       ))}
-    </ul>
+    </span>
   );
+};
+
+var CrossOutList = () => {
+  if (check === true) {
+    check = false;
+  } else {
+    check = true;
+  }
+  console.log({ check });
 };
 export default List;

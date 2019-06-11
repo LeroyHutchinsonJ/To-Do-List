@@ -28,7 +28,7 @@ class App extends React.Component {
           setText={this.setText}
           onKeyPress={this.handleKeyPress}
         />
-
+        <br />
         <List listArr={this.state.listArr} />
       </div>
     );

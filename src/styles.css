@@ -2,3 +2,15 @@
   font-family: sans-serif;
   text-align: center;
 }
+.flexContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.list {
+  padding: 10px;
+  border: 1px solid black;
+}
+.list:hover {
+  cursor: pointer;
+}
