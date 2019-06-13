@@ -10,12 +10,13 @@ class App extends React.Component {
     listArr: []
   };
   counter = 0;
+
   setText = event => {
     this.setState({ text: event.target.value });
   };
 
-  handleKeyPress = e => {
-    if (e.key === "Enter") {
+  handleKeyPress = a => {
+    if (a.key === "Enter") {
       this.setState({ listArr: [...this.state.listArr, this.state.text] });
       this.setState({ text: "" });
     }
