@@ -22,6 +22,22 @@ class App extends React.Component {
     }
   };
 
+  //This function is to handle removing items from an array
+  removeFromArray = ({ a }) => {
+    //Copy the state array into a new array that i will mess with
+    var array = [...this.state.listArr];
+
+    //Set the index variable equal to the current array index
+    var index = array.indexOf(a);
+
+    //If array size is greater than -1 that means it has something in it
+    if (a !== -1) {
+      //Splice cuts things up at the first value which is the index, the second parameter is probably how many things to cut up
+      array.splice(index, 1);
+      this.setState({ listArr: array });
+    }
+  };
+
   render() {
     return (
       <div>
@@ -31,7 +47,7 @@ class App extends React.Component {
           onKeyPress={this.handleKeyPress}
         />
         <br />
-        <List listArr={this.state.listArr} />
+        <List listArr={this.state.listArr} killItem={this.removeFromArray} />
       </div>
     );
   }

@@ -3,12 +3,15 @@ import shortid from "shortid";
 
 var list = "list";
 
-var List = ({ listArr }) => {
+var List = ({ listArr, killItem }) => {
   return (
     <span className="flexContainer">
       {listArr.map(info => (
         <div key={shortid.generate()}>
-          <div className={list}> {info}</div>
+          <div className={list} onClick={killItem}>
+            {" "}
+            {info}
+          </div>
           <br />
         </div>
       ))}
