@@ -8,7 +8,7 @@ var List = ({ listArr, killItem }) => {
     <span className="flexContainer">
       {listArr.map(info => (
         <div key={shortid.generate()}>
-          <div className={list} onClick={killItem}>
+          <div className={list} onClick={() => killItem(info)}>
             {" "}
             {info}
           </div>
